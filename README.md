@@ -171,17 +171,6 @@ flowchart TB
 - **Notifications API** natives
 - **Wake Lock API** pour écran toujours allumé en mode kiosque
 
-### 📱 Application Android native (en cours)
-
-- **Kotlin 2.0** + **Jetpack Compose** + **Material 3**
-- **Retrofit / OkHttp** + Cookie persistence
-- **socket.io-client-java** pour le live feed
-- **DataStore Preferences** pour stockage local
-- **Coil 3** pour les images
-- **Foreground Service** pour notifications 24/7
-- **MediaPlayer** + **NotificationCompat** pour alertes sonores
-- Min SDK 26 (Android 8) / Target 35
-
 ---
 
 ## 🎯 Fonctionnalités principales
