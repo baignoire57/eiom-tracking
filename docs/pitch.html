@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>EIOM Tracking — Pitch MEWO Dev Challenge 2026 · Candidature alternance</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @page :first {
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1f2937;
+    background: #ffffff;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root {
+    --primary: #0866ff;
+    --primary-dark: #064bb8;
+    --primary-light: #e6f0ff;
+    --accent: #f59e0b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --bg-gray: #f9fafb;
+    --border: #e5e7eb;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm 18mm 16mm;
+    page-break-after: always;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* === Cover === */
+  .cover {
+    background: linear-gradient(135deg, #0866ff 0%, #1f3d9e 60%, #0a2659 100%);
+    color: white;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-top {
+    padding: 30mm 22mm 0;
+    flex: 1;
+  }
+  .cover .eyebrow {
+    text-transform: uppercase;
+    font-size: 9pt;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .cover h1 {
+    font-size: 48pt;
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+  }
+  .cover .tagline {
+    font-size: 14pt;
+    font-weight: 300;
+    color: rgba(255,255,255,0.92);
+    max-width: 145mm;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+  .cover .hook {
+    background: rgba(255,255,255,0.08);
+    border-left: 4px solid #ffd24c;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    max-width: 145mm;
+  }
+  .cover .hook .h-lbl {
+    font-size: 8pt;
+    letter-spacing: 2px;
+    color: #ffd24c;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .cover .hook .h-txt {
+    font-size: 13pt;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .cover .badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .cover .badge {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 9.5pt;
+    font-weight: 600;
+  }
+  .cover-bottom {
+    background: rgba(0,0,0,0.25);
+    padding: 14mm 22mm;
+  }
+  .cover-bottom {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .cover-bottom .author-photo {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+    object-fit: cover;
+    object-position: center 18%;
+    border: 3px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+  }
+  .cover-bottom .author-block { flex: 1; }
+  .cover-bottom .author {
+    font-size: 11pt;
+  }
+  .cover-bottom .author strong {
+    font-weight: 700;
+    font-size: 13pt;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cover-bottom .author a {
+    color: #aaccff;
+    text-decoration: none;
+  }
+  .cover-bottom .meta-row {
+    margin-top: 16px;
+    display: flex;
+    gap: 24px;
+    font-size: 9.5pt;
+    color: rgba(255,255,255,0.75);
+  }
+  .cover-bottom .meta-row strong {
+    color: white;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* === Sections === */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary);
+  }
+  .section-header .num {
+    background: var(--primary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14pt;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 18pt;
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin: 0;
+  }
+  .section-header .sub {
+    color: var(--text-light);
+    font-size: 10pt;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  h3 {
+    color: var(--primary-dark);
+    font-size: 12pt;
+    font-weight: 700;
+    margin: 18px 0 8px;
+    padding-left: 10px;
+    border-left: 4px solid var(--accent);
+  }
+
+  p { margin: 6px 0 10px; }
+  ul, ol { margin: 6px 0 12px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  strong { font-weight: 700; color: #0f172a; }
+  a { color: var(--primary); text-decoration: none; }
+
+  /* === Profil candidat === */
+  .profile-card {
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 14px 0;
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 22px;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+  .profile-card .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28pt;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .profile-card .avatar-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    object-fit: cover;
+    object-position: center 18%;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+  }
+  .profile-card .name {
+    font-size: 17pt;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1.1;
+  }
+  .profile-card .role {
+    font-size: 10.5pt;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .profile-card .quick {
+    margin-top: 6px;
+    font-size: 9.5pt;
+    color: var(--text);
+  }
+
+  .xp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .xp-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 6px;
+    padding: 9px 12px;
+    page-break-inside: avoid;
+  }
+  .xp-card .xp-meta {
+    font-size: 8pt;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .xp-card .xp-role {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+  .xp-card .xp-desc {
+    font-size: 9pt;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* === Stat cards === */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 14px 0 18px;
+  }
+  .stat-card {
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .stat-card .val {
+    font-size: 18pt;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .lbl {
+    font-size: 8pt;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  /* === Tables === */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8px 0 14px;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    text-align: left;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--bg-gray); }
+  tr:last-child td { border-bottom: none; }
+
+  .perf-up { color: var(--success); font-weight: 700; }
+  .perf-down { color: var(--danger); font-weight: 700; text-decoration: line-through; opacity: 0.7; }
+  .perf-gain { font-weight: 800; color: var(--primary-dark); background: var(--primary-light); padding: 2px 8px; border-radius: 4px; }
+
+  /* === Difficulty blocks === */
+  .difficulty {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    page-break-inside: avoid;
+    border-left: 4px solid var(--accent);
+  }
+  .difficulty .diff-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-weight: 800;
+    font-size: 11pt;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .difficulty h4 {
+    display: inline;
+    font-size: 11.5pt;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .difficulty .problem {
+    color: var(--text-light);
+    margin: 8px 0 8px 32px;
+    font-size: 9.5pt;
+    font-style: italic;
+  }
+  .difficulty .solution {
+    margin-left: 32px;
+    font-size: 10pt;
+  }
+  .difficulty .solution strong {
+    color: var(--primary-dark);
+  }
+
+  /* === Code block === */
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    margin: 10px 0;
+  }
+  pre .ok { color: #6ee7b7; }
+  pre .err { color: #fca5a5; }
+  pre .info { color: #93c5fd; }
+  code {
+    background: var(--bg-gray);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', monospace;
+    font-size: 9pt;
+    color: var(--primary-dark);
+  }
+
+  /* === Callout === */
+  .callout {
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 4px;
+    page-break-inside: avoid;
+    font-size: 10pt;
+  }
+  .callout strong { color: #92400e; }
+
+  /* === Highlights === */
+  .highlights { margin: 14px 0; }
+  .highlight-item {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    page-break-inside: avoid;
+  }
+  .highlight-item:last-child { border-bottom: none; }
+  .highlight-item .ico {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14pt;
+  }
+  .highlight-item .content strong {
+    color: var(--primary-dark);
+    font-size: 10.5pt;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .highlight-item .content { flex: 1; font-size: 10pt; }
+
+  /* === Skill chips === */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0 14px;
+  }
+  .chip {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border: 1px solid #cfe0ff;
+    border-radius: 999px;
+    padding: 3px 11px;
+    font-size: 9pt;
+    font-weight: 600;
+  }
+  .chip.secu { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+  .chip.dev { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+  .chip.infra { background: #f3e8ff; color: #6b21a8; border-color: #e9d5ff; }
+  .chip.ai { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+
+  /* === Persona box === */
+  .persona-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    page-break-inside: avoid;
+    border-left: 4px solid var(--success);
+  }
+  .persona-box .p-title {
+    font-weight: 700;
+    color: var(--success);
+    font-size: 10.5pt;
+    margin-bottom: 4px;
+  }
+  .persona-box .p-quote {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 10pt;
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 3px solid var(--border);
+  }
+
+  /* === Footer === */
+  .page-footer {
+    position: absolute;
+    bottom: 8mm;
+    left: 18mm;
+    right: 18mm;
+    border-top: 1px solid var(--border);
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: var(--text-light);
+  }
+  .page-footer .brand {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* === Final page === */
+  .ask-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 22px 26px;
+    border-radius: 12px;
+    margin: 16px 0;
+  }
+  .ask-card h3 {
+    color: white;
+    border: none;
+    padding: 0;
+    font-size: 14pt;
+    margin-bottom: 8px;
+  }
+  .ask-card p { color: rgba(255,255,255,0.95); font-size: 11pt; }
+  .ask-card .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .ask-card .pillar {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .ask-card .pillar .lbl {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .ask-card .pillar .val {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .link-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .link-card .lbl {
+    font-size: 8.5pt;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .link-card a {
+    font-size: 10.5pt;
+    word-break: break-all;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ PAGE 1 / COUVERTURE ════════════════════ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="eyebrow">MEWO Dev Challenge 2026 · Candidature alternance Bac+3</div>
+    <h1>EIOM<br>Tracking</h1>
+    <div class="tagline">
+      Plateforme distribuée d'agrégation et de notification temps réel pour annonces de dons gratuits —
+      conçue, codée et opérée seul, en production stable depuis plusieurs mois.
+    </div>
+
+    <div class="hook">
+      <div class="h-lbl">Pourquoi ce pitch</div>
+      <div class="h-txt">
+        Je ne pitche pas une startup. Je pitche un projet personnel que j'ai construit seul pour démontrer,
+        preuves à l'appui, que je suis prêt pour une alternance dev à l'École MEWO en septembre 2026.
+      </div>
+    </div>
+
+    <div class="badges">
+      <span class="badge">7 sources agrégées</span>
+      <span class="badge">25 000 annonces / 30 j</span>
+      <span class="badge">Uptime 99.9 %</span>
+      <span class="badge">100 % solo</span>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <img src="photo-olivier.png" alt="Olivier MATHIEU" class="author-photo" />
+    <div class="author-block">
+      <div class="author">
+        <strong>Olivier MATHIEU</strong>
+        Technicien Systèmes &amp; Réseaux · Développeur · 12 ans d'expérience terrain<br>
+        <a href="mailto:olivier.mathieu@eiom.fr">olivier.mathieu@eiom.fr</a> · 06 74 52 10 76 · Hombourg-Haut (57)
+      </div>
+      <div class="meta-row">
+        <div>
+          <strong>Dépôt vitrine</strong>
+          github.com/baignoire57/eiom-tracking
+        </div>
+        <div>
+          <strong>Démo</strong>
+          Sur demande au jury
+        </div>
+        <div>
+          <strong>Statut</strong>
+          Actif &amp; maintenu
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 2 / LE CANDIDAT ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">1</div>
+    <div>
+      <h2>Le candidat</h2>
+      <div class="sub">12 ans d'expérience IT terrain au service d'un objectif : décrocher l'alternance.</div>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <img src="photo-olivier.png" alt="Olivier MATHIEU" class="avatar-photo" />
+    <div>
+      <div class="name">Olivier MATHIEU · 38 ans</div>
+      <div class="role">Technicien Systèmes &amp; Réseaux · Développeur · Cybersécurité industrielle</div>
+      <div class="quick">📍 Hombourg-Haut (57) — Grand Est · Permis B + véhicule · Télétravail ou présentiel</div>
+    </div>
+  </div>
+
+  <h3>Mon parcours en une ligne</h3>
+  <p>
+    Profil <strong>hybride dev + admin systèmes + cybersécurité</strong>, je travaille en IT depuis 2014.
+    J'ai mené en autonomie des missions critiques en environnement industriel
+    (ThyssenKrupp, TotalEnergies, IONOS 1&amp;1), administré des systèmes Linux/Windows
+    en production, développé en Python, JavaScript et Node.js, et géré seul des fermetures
+    d'infrastructures IT complètes.
+  </p>
+
+  <h3>Expériences marquantes</h3>
+  <div class="xp-grid">
+    <div class="xp-card">
+      <div class="xp-meta">2024–2025 · ThyssenKrupp Automotive</div>
+      <div class="xp-role">IT &amp; Développeur — Nouveau site Herrlisheim</div>
+      <div class="xp-desc">Workflows métier (Moovapps Process / JS), rapports BIRT/SQL Server, migration VM vSphere/ESXi, restauration sauvegardes LTO, rétention réglementaire 20 ans.</div>
+    </div>
+    <div class="xp-card">
+      <div class="xp-meta">2024 · ThyssenKrupp Hambach</div>
+      <div class="xp-role">Responsable Clôture IT du site industriel</div>
+      <div class="xp-desc">Mission critique — seul responsable, aucun encadrement sur site. Pilotage de la clôture totale, migration VM vers l'Allemagne, structuration des données long terme.</div>
+    </div>
+    <div class="xp-card">
+      <div class="xp-meta">2023 · TotalEnergies Carling</div>
+      <div class="xp-role">Analyste Cybersécurité &amp; IT</div>
+      <div class="xp-desc">Inventaire 1 400 équipements IT, audit OT sous fortes contraintes industrielles, déploiement KUB Cleaner / bornes USB.</div>
+    </div>
+    <div class="xp-card">
+      <div class="xp-meta">2020–2021 · IONOS 1&amp;1 (Zweibrücken)</div>
+      <div class="xp-role">Support Hosting BO — Tech Systèmes &amp; Réseaux</div>
+      <div class="xp-desc">Support N2/N3 VPS / dédiés / cloud, admin Linux/Windows (Apache, Nginx, Plesk, cPanel), dev d'outils d'automatisation Python / Java / JS.</div>
+    </div>
+  </div>
+
+  <h3>Mes domaines techniques</h3>
+  <div class="chips">
+    <span class="chip dev">Python</span>
+    <span class="chip dev">JavaScript</span>
+    <span class="chip dev">Node.js</span>
+    <span class="chip dev">Kotlin</span>
+    <span class="chip dev">SQL Server / MySQL</span>
+    <span class="chip infra">Linux (Debian/Ubuntu)</span>
+    <span class="chip infra">Windows Server / AD</span>
+    <span class="chip infra">VMware vSphere</span>
+    <span class="chip infra">nginx / Apache / Plesk</span>
+    <span class="chip secu">SSH / Chisel / tunneling</span>
+    <span class="chip secu">Audit SI / Nmap / Wireshark</span>
+    <span class="chip ai">LLM self-hosted (Qwen3)</span>
+  </div>
+
+  <h3>Formation</h3>
+  <div class="xp-grid">
+    <div class="xp-card" style="border-left-color: var(--success)">
+      <div class="xp-meta" style="color: var(--success)">EN COURS · Fév 2026 → Janv 2027</div>
+      <div class="xp-role">VAE BTS Cybersécurité, Informatique &amp; Réseaux (CIREN) — option A</div>
+      <div class="xp-desc">DAVA Saint-Avold · Validation des acquis professionnels en parallèle de la recherche d'alternance.</div>
+    </div>
+    <div class="xp-card" style="border-left-color: var(--accent); background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%)">
+      <div class="xp-meta" style="color: var(--accent)">VISÉE · Sept 2026 · 12 mois · Metz</div>
+      <div class="xp-role">Concepteur Développeur Web Full Stack — Titre RNCP Niveau 6 (Bac+3)</div>
+      <div class="xp-desc">École MEWO · <strong>Alternance</strong> : 4 j entreprise / 1 j école — ou <strong>initiale</strong> : 1 j école / 3 mois de stage.</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 2 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 3 / PERSONA & PROBLÈME ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">2</div>
+    <div>
+      <h2>Pourquoi ce projet</h2>
+      <div class="sub">Un besoin personnel, un problème réel, un déclencheur d'apprentissage.</div>
+    </div>
+  </div>
+
+  <h3>L'origine</h3>
+  <p>
+    Bricoleur et passionné de rénovation, je récupérais déjà du matériel d'occasion ou donné pour
+    mes projets perso. J'ai vite réalisé qu'une bonne partie des annonces les plus intéressantes
+    — meubles, électroménager, vélos, matériaux — disparaissaient en quelques minutes parce qu'elles
+    étaient éparpillées sur sept plateformes différentes.
+  </p>
+
+  <h3>Le problème, concrètement</h3>
+  <p>
+    En France et en Allemagne, on trouve <strong>sept grandes plateformes publiques</strong> qui hébergent
+    des annonces de dons gratuits : Le Bon Coin, Geev, Donnons, JeDonne, ToutDonner, Kleinanzeigen, et les
+    groupes Facebook locaux dédiés aux dons avant déchetterie.
+  </p>
+  <p>
+    Chaque site a sa propre interface, ses propres notifications (souvent absentes), ses propres règles.
+    <strong>Surveiller manuellement ces sept sources à grande échelle est impossible.</strong>
+  </p>
+
+  <h3>Pourquoi je l'ai construit moi-même</h3>
+  <p>
+    Soyons direct : je l'ai construit parce que <strong>je savais que ça allait marcher</strong>, et que ça allait être
+    rapide à faire pour moi. Sur d'autres projets personnels, j'avais déjà mis en place chacune des briques
+    techniques nécessaires : scraping et contournement des protections, backend Node.js avec push temps réel,
+    self-hosting de modèles IA, app Android Kotlin, infra Linux/nginx en production.
+  </p>
+  <p>
+    Le vrai défi n'était donc pas la difficulté technique de chaque brique isolée — je les maîtrisais déjà.
+    Le défi a été <strong>l'assemblage</strong> : faire fonctionner ensemble 5 process indépendants, 3 clients distincts
+    (Progressive Web App, extension Firefox, app Android), 1 service IA, et un pool de 10 proxies, 24h/24 et 7j/7,
+    de manière fiable et observable.
+  </p>
+  <p>
+    C'est précisément cette <strong>capacité d'intégration et de mise en production</strong> que ce projet démontre :
+    transformer un stock de compétences accumulées au fil des années en un produit qui tourne pour de vrais utilisateurs.
+  </p>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 3 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 4 / CE QUE LE PROJET DÉMONTRE ════════════════════ -->
+<div class="page">
+  <div class="section-header" style="margin-bottom:10px; padding-bottom:8px">
+    <div class="num">3</div>
+    <div>
+      <h2>Ce que ce projet démontre</h2>
+      <div class="sub">Chaque chiffre est mesuré sur les logs de production, pas estimé.</div>
+    </div>
+  </div>
+
+  <h3 style="margin:4px 0 6px">Aperçu du dashboard en production</h3>
+  <div style="text-align: center; margin: 0">
+    <img src="demo-tracking-frame.jpg" alt="Dashboard EIOM Tracking — vue 1"
+         style="width: 100%; max-width: 130mm; border-radius: 5px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.08)" />
+  </div>
+  <div style="text-align: center; margin: 6px 0 0">
+    <img src="demo-tracking-2.jpg" alt="Dashboard EIOM Tracking — vue 2"
+         style="width: 100%; max-width: 130mm; border-radius: 5px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.08)" />
+  </div>
+
+  <h3 style="margin:14px 0 4px">Le projet, en chiffres</h3>
+  <div class="stats-grid" style="margin: 4px 0 0; gap: 5px">
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">25 000+</div>
+      <div class="lbl" style="font-size:7pt">annonces / 30 j</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">&lt; 100 ms</div>
+      <div class="lbl" style="font-size:7pt">latence push</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">99.9 %</div>
+      <div class="lbl" style="font-size:7pt">uptime prod</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">~2 s</div>
+      <div class="lbl" style="font-size:7pt">cycle complet</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">7</div>
+      <div class="lbl" style="font-size:7pt">sources surveillées</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">600+</div>
+      <div class="lbl" style="font-size:7pt">traductions IA / jour</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">70 Ko</div>
+      <div class="lbl" style="font-size:7pt">frontend gzippé</div>
+    </div>
+    <div class="stat-card" style="padding: 6px 8px">
+      <div class="val" style="font-size:13pt">5</div>
+      <div class="lbl" style="font-size:7pt">processus pm2</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 4 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 5 / CE QUE LE PROJET DÉMONTRE (suite) ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">3</div>
+    <div>
+      <h2>Ce que ce projet démontre (suite)</h2>
+      <div class="sub">Détails des fonctionnalités côté utilisateur et côté infrastructure.</div>
+    </div>
+  </div>
+
+  <h3>Côté utilisateur</h3>
+  <ul>
+    <li><strong>Feed temps réel</strong> via push WebSocket (Socket.IO) — chaque annonce affichée en &lt; 100 ms.</li>
+    <li><strong>Recherche full-text</strong> sur 25 000+ annonces, toggle sensibilité à la casse.</li>
+    <li><strong>Alertes mots-clés</strong> avec son personnalisé, bordure dorée et notification système.</li>
+    <li><strong>Favoris persistants</strong>, préservés de la purge automatique 60 jours.</li>
+    <li><strong>Banlist intelligente</strong> par mot complet (gestion accents français).</li>
+    <li><strong>Statistiques visuelles</strong>, onglet Santé en direct, paramètres dynamiques (effet en ≤ 60 s).</li>
+  </ul>
+
+  <h3>Côté infrastructure</h3>
+  <ul>
+    <li><strong>Dédoublonnage à 3 niveaux</strong> : Set client, clé primaire SQLite, index par horodatage.</li>
+    <li><strong>Authentification stateless</strong> en HMAC-SHA256 (équivalent JWT, écrit à la main).</li>
+    <li><strong>Protection bruteforce</strong> par ban d'IP après 3 échecs.</li>
+    <li><strong>Purge automatique</strong> via cron nocturne, avec exception pour les favoris.</li>
+    <li><strong>Auto-restart</strong> via pm2 — aucune perte de cycle en cas de crash.</li>
+    <li><strong>Configuration centralisée</strong> propagée aux 3 clients en ≤ 60 s, zéro redéploiement.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Pas un POC.</strong> Le système tourne en production réelle depuis plusieurs mois avec des
+    utilisateurs effectifs. Toutes les métriques affichées sont issues des logs de production.
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 5 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 5 / STACK & ARCHITECTURE ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">4</div>
+    <div>
+      <h2>Stack &amp; architecture</h2>
+      <div class="sub">Une seule personne, toutes les couches : web, mobile, IA, devops, networking.</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th style="width:35%">Couche</th><th>Stack</th></tr>
+    <tr><td><strong>Backend serveur</strong></td><td>Node.js 20, Express 4, Socket.IO 4, better-sqlite3 (WAL)</td></tr>
+    <tr><td><strong>Couche de collecte</strong></td><td>Python 3.13, requests, BeautifulSoup4, <strong>librairie conçue sur mesure pour gérer les protections de sécurité web</strong></td></tr>
+    <tr><td><strong>Service IA</strong></td><td>Qwen3 4B self-hosté, PyTorch CPU, transformers, FastAPI</td></tr>
+    <tr><td><strong>Extension navigateur</strong></td><td>Firefox Developer Edition, Manifest V2, JavaScript natif, <code>browser.proxy.onRequest</code></td></tr>
+    <tr><td><strong>Frontend web</strong></td><td>HTML / CSS Grid / JS Vanilla — zéro framework, 70 Ko gzippé</td></tr>
+    <tr><td><strong>Progressive Web App</strong></td><td>Service Worker, manifest, Notifications API, WebAudio API, Wake Lock API</td></tr>
+    <tr><td><strong>App mobile native</strong></td><td>Kotlin 2.0, Jetpack Compose, Material 3, Retrofit, Coil 3, Foreground Service</td></tr>
+    <tr><td><strong>Réseau &amp; routage</strong></td><td>Pool de <strong>10 serveurs proxy</strong> en rotation automatique, retry transparent, cooldown par IP</td></tr>
+    <tr><td><strong>Reverse proxy / TLS</strong></td><td>nginx, Let's Encrypt + certbot, HSTS, CSP, X-Frame-Options</td></tr>
+    <tr><td><strong>Supervision</strong></td><td>pm2 (5 process indépendants), cron, logs structurés</td></tr>
+    <tr><td><strong>Hébergement</strong></td><td>VPS dédié, 8 Go RAM, 6 vCPU AMD EPYC</td></tr>
+  </table>
+
+  <h3>Architecture résumée</h3>
+  <pre><span class="info">[7 sources publiques]</span>
+       ↓ (HTTPS / REST / WebExt)
+<span class="info">[Couche de collecte Python]</span> ←→ <span class="ok">[Service IA Qwen3 4B local]</span>
+       ↓ (POST /api/ingest)
+<span class="info">[Backend Node.js + SQLite]</span>
+       ↓ (Socket.IO push <span class="ok">&lt; 100 ms</span>)
+<span class="info">[Clients : Progressive Web App · App Android · Extension]</span></pre>
+
+  <h3>Empreinte mémoire en production</h3>
+  <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr)">
+    <div class="stat-card">
+      <div class="val">68 Mo</div>
+      <div class="lbl">backend Node</div>
+    </div>
+    <div class="stat-card">
+      <div class="val">63 Mo</div>
+      <div class="lbl">scraper Python</div>
+    </div>
+    <div class="stat-card">
+      <div class="val">~3 Go</div>
+      <div class="lbl">modèle Qwen3 4B</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 6 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 6 / DIFFICULTÉS (1/2) ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">5</div>
+    <div>
+      <h2>Difficultés résolues en production</h2>
+      <div class="sub">Six problèmes concrets, six solutions construites seul.</div>
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">1</span><h4>Intégration avec les systèmes de protection web</h4>
+    <div class="problem">
+      Plusieurs sources publiques utilisent des systèmes de protection commerciaux qui inspectent les empreintes TLS
+      et les patterns de trafic. Les clients HTTP classiques sont identifiés comme non-navigateurs et reçoivent une
+      réponse dégradée.
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> pour ces sources, conception d'une <strong>extension Firefox</strong> dédiée
+      qui laisse le navigateur traiter naturellement les challenges côté client. Routage réseau via un proxy spécifique
+      par onglet grâce à <code>browser.proxy.onRequest</code>, authentification proxy automatique via
+      <code>webRequest.onAuthRequired</code>. Mécanisme de cooldown par IP.
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">2</span><h4>Rate-limiting passif sur l'IP serveur</h4>
+    <div class="problem">
+      Certaines APIs répondaient en 100 secondes alors qu'un navigateur classique chargeait en 200 ms.
+      Diagnostic : rate-limiting passif silencieux sur l'IP datacenter (HTTP 200 mais latence artificielle).
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> rotation automatique sur un <strong>pool de 10 IPs sortantes</strong> avec retry transparent.
+      <table style="margin-top:8px">
+        <tr><th>Indicateur</th><th>Avant</th><th>Après</th><th>Gain</th></tr>
+        <tr><td>Cycle complet</td><td><span class="perf-down">175 s</span></td><td><span class="perf-up">2 s</span></td><td><span class="perf-gain">× 85</span></td></tr>
+        <tr><td>Latence Kleinanzeigen</td><td><span class="perf-down">100 000 ms</span></td><td><span class="perf-up">&lt; 500 ms</span></td><td><span class="perf-gain">× 200</span></td></tr>
+        <tr><td>Polls / jour</td><td>500</td><td><strong>1 400</strong></td><td><span class="perf-gain">× 2.8</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">3</span><h4>Qualité des traductions allemand → français</h4>
+    <div class="problem">
+      Le prototype utilisait des services de traduction grand public. Résultat : hallucinations régulières
+      sur le vocabulaire technique allemand et style peu naturel pour des annonces de don.
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> déploiement local d'un <strong>LLM open-source (Qwen3 4B)</strong>
+      exposé via FastAPI, cache LRU des traductions répétées, chaîne de fallback prête. Qualité sensiblement
+      supérieure aux services grand public, sans dépendance à une API tierce payante.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 7 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 7 / DIFFICULTÉS (2/2) + APPORT ÉQUIPE ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">5</div>
+    <div>
+      <h2>Difficultés résolues (suite)</h2>
+      <div class="sub">Faux positifs, observabilité, multi-clients.</div>
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">4</span><h4>Faux positifs sur le système d'alertes</h4>
+    <div class="problem">
+      Le matching initial utilisait <code>String.includes()</code>. Le mot-clé « lit » matchait
+      « qualité », « Kleinblittersdorf », « politique »… Beaucoup de fausses alertes sonores.
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> regex à bordures de mots <strong>tolérantes aux accents français</strong>.
+      Passage de ~15 matches/heure (essentiellement faux) à ~3 matches/jour parfaitement pertinents.
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">5</span><h4>Erreurs silencieuses dans la chaîne de scraping</h4>
+    <div class="problem">
+      Le code initial loggait uniquement les cycles avec résultats. Impossible de débogger en production.
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> refonte des logs en format structuré exploitable, avec timing au millième :
+      <pre style="margin-top:8px"><span class="info">═════ Cycle #1242 démarré — 2026-06-23 14:32:18 ═════</span>
+  -> [Donnons] GET https://api.donnons.org/... (via 217.154.x.x)
+  -> [Donnons] HTTP 200 en 211 ms → 0 nouveaux sur 100 annonces
+  -> [Klein]   GET https://www.kleinanzeigen.de/... (via 213.165.x.x)
+  -> [Klein]   HTTP 200 en 469 ms → 1 nouveaux | translate: 2×1999 ms
+<span class="info">═════ Cycle #1242 terminé — 14:32:20 — durée 2.1 s — sommeil 60 s ═════</span></pre>
+      Exploité par un endpoint <code>/api/health</code> consommé par le dashboard.
+    </div>
+  </div>
+
+  <div class="difficulty">
+    <span class="diff-num">6</span><h4>Architecture multi-clients sans duplication</h4>
+    <div class="problem">
+      Trois clients (Progressive Web App, extension Firefox, app Android Kotlin) doivent rester cohérents
+      sur les annonces, les mots-clés et les paramètres.
+    </div>
+    <div class="solution">
+      <strong>Solution :</strong> configuration centralisée en base + endpoints REST partagés, lus par les trois clients
+      avec un cache 60 s. Modification dans l'interface = propagée à l'extension Firefox et au scraper Python en moins
+      d'une minute, sans aucun redéploiement.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 8 / 9</span>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 8 / CE QUE J'APPORTE + ASK ════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <div class="num">6</div>
+    <div>
+      <h2>Ce que j'apporte à une équipe</h2>
+      <div class="sub">Profil hybride, autonomie complète, vision business + technique.</div>
+    </div>
+  </div>
+
+  <div class="highlights" style="margin: 6px 0">
+    <div class="highlight-item" style="padding: 4px 0">
+      <div class="ico" style="width:26px;height:26px;font-size:11pt">🎯</div>
+      <div class="content" style="font-size:9.5pt"><strong style="font-size:10pt">Autonomie complète déjà démontrée</strong>
+        Mission ThyssenKrupp Herrlisheim : pilotage du <strong>déploiement Moovapps Process</strong> (Java / JS)
+        et <strong>développement des rapports BIRT</strong> pour le nouveau site — sans encadrement.</div>
+    </div>
+    <div class="highlight-item" style="padding: 4px 0">
+      <div class="ico" style="width:26px;height:26px;font-size:11pt">🧰</div>
+      <div class="content" style="font-size:9.5pt"><strong style="font-size:10pt">Profil hybride dev + sys + sécu</strong>
+        Je choisis le langage en fonction du projet demandé.
+        <strong>Toutes les infrastructures utilisées pour ce projet sont à moi</strong> : serveur, domaine, certificats, hébergement.</div>
+    </div>
+    <div class="highlight-item" style="padding: 4px 0">
+      <div class="ico" style="width:26px;height:26px;font-size:11pt">📚</div>
+      <div class="content" style="font-size:9.5pt"><strong style="font-size:10pt">Capacité d'auto-formation rapide</strong>
+        Crystal Reports → BIRT en autoformation complète (ThyssenKrupp). LLMs self-hostés. Je sais apprendre vite quand le besoin est là.</div>
+    </div>
+    <div class="highlight-item" style="padding: 4px 0">
+      <div class="ico" style="width:26px;height:26px;font-size:11pt">🏭</div>
+      <div class="content" style="font-size:9.5pt"><strong style="font-size:10pt">Expérience industrielle critique</strong>
+        Environnements OT, normes ATEX/RC/SEVESO, sites sensibles (TotalEnergies, ThyssenKrupp). Travailler sous contraintes et gérer la crise.</div>
+    </div>
+    <div class="highlight-item" style="padding: 4px 0">
+      <div class="ico" style="width:26px;height:26px;font-size:11pt">💡</div>
+      <div class="content" style="font-size:9.5pt"><strong style="font-size:10pt">Capacité d'analyse &amp; conseil</strong>
+        Bonne capacité d'analyse pour <strong>comprendre les besoins réels d'un client</strong> et proposer la solution adaptée — pas seulement celle demandée.</div>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top:12px; margin-bottom:10px; padding-bottom:8px">
+    <div class="num">7</div>
+    <div>
+      <h2>Mon objectif &amp; ce que je demande</h2>
+      <div class="sub">Une alternance Bac+3 à l'École MEWO à partir de septembre 2026.</div>
+    </div>
+  </div>
+
+  <div class="ask-card" style="padding: 12px 18px; margin: 6px 0">
+    <h3 style="margin-bottom:4px; font-size:13pt">🎯 Ma demande au jury MEWO</h3>
+    <p style="font-size:9.5pt; line-height:1.45">
+      Je candidate pour une <strong>alternance dev ou administrateur systèmes &amp; réseaux niveau Bac+3
+      avec l'ambition du Bac+5</strong>, en rythme alterné avec l'École MEWO à partir de <strong>septembre 2026</strong>.
+      Je cherche une entreprise qui me confiera des projets techniques réels, où mon profil hybride apportera de la valeur dès le premier jour.
+    </p>
+    <div class="pillars" style="margin-top:8px; gap:6px">
+      <div class="pillar" style="padding:6px 10px">
+        <div class="lbl" style="font-size:7.5pt">Formation visée</div>
+        <div class="val" style="font-size:10pt">Bac+3 Dev / Sysadmin</div>
+      </div>
+      <div class="pillar" style="padding:6px 10px">
+        <div class="lbl" style="font-size:7.5pt">Démarrage</div>
+        <div class="val" style="font-size:10pt">Septembre 2026</div>
+      </div>
+      <div class="pillar" style="padding:6px 10px">
+        <div class="lbl" style="font-size:7.5pt">Mobilité</div>
+        <div class="val" style="font-size:10pt">Grand Est · Remote</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="links-grid" style="grid-template-columns: repeat(4, 1fr); margin: 6px 0 0; gap: 6px">
+    <div class="link-card" style="padding: 6px 10px">
+      <div class="lbl" style="font-size:7.5pt">GitHub vitrine</div>
+      <a href="https://github.com/baignoire57/eiom-tracking" style="font-size:8.5pt">baignoire57/eiom-tracking</a>
+    </div>
+    <div class="link-card" style="padding: 6px 10px">
+      <div class="lbl" style="font-size:7.5pt">Démo en direct</div>
+      <a href="mailto:olivier.mathieu@eiom.fr" style="font-size:8.5pt">Sur demande au jury</a>
+    </div>
+    <div class="link-card" style="padding: 6px 10px">
+      <div class="lbl" style="font-size:7.5pt">Email</div>
+      <a href="mailto:olivier.mathieu@eiom.fr" style="font-size:8.5pt">olivier.mathieu@eiom.fr</a>
+    </div>
+    <div class="link-card" style="padding: 6px 10px">
+      <div class="lbl" style="font-size:7.5pt">Téléphone</div>
+      <a href="tel:+33674521076" style="font-size:8.5pt">06 74 52 10 76</a>
+    </div>
+  </div>
+
+  <p style="margin-top:6px;font-size:7.5pt;color:var(--text-light);font-style:italic;line-height:1.3">
+    EIOM Tracking : projet personnel d'auto-apprentissage à but non-commercial, distinct de l'activité de consulting EIOM.
+  </p>
+
+  <div class="page-footer">
+    <span><span class="brand">EIOM Tracking</span> — Olivier MATHIEU · MEWO Dev Challenge 2026</span>
+    <span>Page 9 / 9</span>
+  </div>
+</div>
+
+</body>
+</html>

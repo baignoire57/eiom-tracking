@@ -1,0 +1,27 @@
+# Fichiers sensibles - ne JAMAIS pusher
+.env
+.env.*
+*.key
+*.pem
+*.crt
+secrets.json
+credentials.json
+*token*
+*password*
+
+# Caches OS / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Sauvegardes
+*.bak
+*.bak.*
+*.backup
